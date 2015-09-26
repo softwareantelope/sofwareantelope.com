@@ -13,24 +13,28 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
+    <link href="css/sb.css" rel="stylesheet" type="text/css">
+    <link href="css/db.css" rel="stylesheet" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- jQuery -->
+    <script src="js/lib/jquery.min.js"></script>
+    <!-- d3, tools -->
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/lib/lodash.min.js"></script>
 
 </head>
-
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
@@ -90,7 +94,9 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About Software Antelope</h2>
-		<p>We develop rapid high speed scaleable website architectures using some of the most advanced tools available.  We also make simple to update CMS sites.  Host your website on the Antelope Cloud. </p>
+        <p>Years of industry experience exclusively available to London corporate clients form the core of our delivery infrastructure. Now we can support your projects.</p> 
+        <p>We develop rapid high speed scaleable website architectures using some of the most advanced tools available.  We also make simple to update content management sites clients can maintain themselves.</p>  
+        <p>You can host your website on the Antelope Cloud, get open source packages installed for you, facilitate secure payments and request bespoke software development services.  All on the cloud.  Fast.  Sleek.  Agile.</p>
             </div>
         </div>
     </section>
@@ -101,16 +107,151 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Antelope Services</h2>
-			<ul class="list-unstyled">
-				<li>Cloud Hosting 
-				<li>Server development
-				<li>Front end development
-				<li>Databases
-				<li>Content Management Systems
-			</ul>
+            <ul class="list-unstyled">
+                <li>Domain Service
+                <li>Cloud Hosting 
+                <li>Content Management Systems
+                <li>Bespoke server development
+                <li>Front end development
+                <li>Databases
+            </ul>
+            <div class="panel panel-default" style="color:black;text-align:left">
+                <div class="panel-heading" style="background-color:grey;color:white"> Service Menu </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled list-group">
+                    <li>
+                        <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <a data-toggle="collapse" href="#services-collapse">Services</a>
+                        <div id="services-collapse" class="panel-collapse collapse">
+                            <a href="#domain" class="list-group-item">Find a suitable domain for you, hook it to services</a>
+                            <a href="#hosting" class="list-group-item">Setup your hosting in minutes on a high speed, highly accessible cloud server.</a>
+                            <a href="#cms" class="list-group-item">Use a Content management system to publish your content immediately.</a>
+                            <a href="#dev" class="list-group-item">Implement your business idea with bespoke development</a>
+                            <a href="#consultancy" class="list-group-item">Consultancy to provide these services to your specification</a>
+                        </div>
+
+                        <li>
+                        <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <a data-toggle="collapse" href="#tools-collapse">Tools</a>
+                        <div id="tools-collapse" class="panel-collapse collapse">
+                                <a href="#visualisation" class="list-group-item">Data Visualisation</a>
+                        </div>
+                    </ul>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="domain" class="content-section text-center">
+        <div class="domain-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Domain Services</h2>
+                    <p>Choose your domain, purchase it and we will give you clear instructions to setup your own Zone file, or do it for you.  We can manage your domain for you so that as we add services and facilities these are immediately available to you.</p>
+                    <p>Your domain defines your zones of influence on the web.  Your domain name is important, but managing the resources that link to it (like email, websites, applications) requires some technical know-how.</p>
+                </div>
+            </div>
+                        <a class="page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="hosting" class="content-section text-center">
+        <div class="hosting-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Hosting Services</h2>
+                    <p> Host your website to suit your needs and budget.  Software Antelope can supply shared hosting resources with open source packages to repaidly create your web presence.  </p>
+                    <p> When you ready we cloud host your resources.  When your site, applications and secure locations are established, we provide you with regular backup methods so your data is always safe and secure.  </p>
+                </div>
+            </div>
+                        <a class="page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="cms" class="content-section text-center">
+        <div class="cms-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>CMS Services</h2>
+                    <p>Wordpress expertise with ease.  Ask about a Wordpress installation, or configure them with proven plugins for Galleries, video libraries, SEO, ECommerce, and more.  You can then update it with posts, connect it to automatically update social media, use it to create a following of collaborators or customers, email promotions and so much more.  </p>
+                </div>
+            </div>
+                        <a class="page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="dev" class="content-section text-center">
+        <div class="dev-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Bespoke Development Services</h2>
+                    <p>Software development of full-stack web systems with databases and front end user interfaces.  Charged on daily rate contracts.  </p>
+                </div>
+            </div>
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultancy" class="content-section text-center">
+        <div class="consultancy-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Consultancy Services</h2>
+                    <p>Hire a consultant programmer for onsite or remote services.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="visualisation" class="content-section text-center">
+        <div class="visualisation-section">
+            <div class="container">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Visualisation</h2>
+                    <div class="panel panel-default" style="color:black;text-align:left">
+                        <div class="panel-heading" style="background-color:grey;color:white"> Interactive Visualisation</div>
+                        <div class="panel-body">
+                            <p>Interactive data visualisations in a browser </p>
+                            <ul class="list-group">
+                                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <a data-toggle="collapse" href="#chart-collapse">Charts</a>
+                                <div id="chart-collapse" class="panel-collapse collapse">
+                                    <a data-toggle="collapse" href="#dashboard" class="list-group-item">Dashboard</a>
+                                    <div id="dashboard" class="panel-collapse collapse">
+                                        <div id="dashboard-chart" style="height:550px" class="col-sm-8">
+<script src="js/db.js"></script>
+                                        </div>
+                                    </div>
+                                    <a data-toggle="collapse" href="#stackedbar" class="list-group-item">Stackedbar chart</a>
+                                    <div id="stackedbar" class="panel-collapse collapse">
+                                        <div id="stackedbar-chart" style="height:520px" class="col-sm-8">
+<form>
+  <label><input type="radio" name="mode" value="grouped"> Grouped</label>
+  <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
+</form>
+<script src="js/sb.js"></script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="divider" class="content-section text-center">
     </section>
 
     <!-- Contact Section -->
@@ -118,48 +259,46 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Software Antelope</h2>
-                <p><a href="mailto:info@softwareantelope.com">email</a></p>
-		<p>Tel 07565112990 </p>
-		
-                <ul style="display:none" class="list-inline banner-social-buttons">
+                <p>Nicholas Alexander <a href="mailto:info@softwareantelope.com">email</a></p>
+        
+                <ul style="display:block" class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        <a href="https://twitter.com/nalexander" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
                     <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        <a href="https://github.com/softwareantelope" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                     </li>
                     <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                        <a href="https://plus.google.com/+NicholasAlexander1/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
-
-    <!-- Map Section -->
-    <div id="map"></div>
+    <section id="divider2" class="content-section text-center">
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Software Antelope Ltd 2015</p>
+            <p class="copyright" style="font-size:small">Copyright &copy; Software Antelope Ltd 2015</p>
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/lib/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <!-- Map Section -->
+    <!-- div id="map"></div -->
+
+    <!-- script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script -->
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
+    <script src="js/lib/grayscale.js"></script>
 
 </body>
 
