@@ -1,4 +1,16 @@
 function dashboard(id, fData){
+    function resize() {
+console.log('resize');
+        var graph = id;
+        var width = parseInt(this.style("width")) - margin*2;
+        var height = parseInt(this.style("height")) - margin*2;
+console.log(width,height);
+        xScale.range([0, width]).nice();
+        yScale.range([height, 0]).nice();
+        graph.select('.x.axis')
+            .attr('transform', 'translate(0, ' + height + ')')
+            .call(d3.svg.axis().scale(x).orient("bottom"));
+    }
     var barColor = 'steelblue';
     function segColor(c){ return {low:"#807dba", mid:"#e08214",high:"#41ab5d"}[c]; }
     
@@ -7,16 +19,18 @@ function dashboard(id, fData){
     
     // function to handle histogram.
     function histoGram(fD){
-        var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+        var hG={},    hGDim = {t: 40, r: 0, b: 10, l: 0};
         hGDim.w = 500 - hGDim.l - hGDim.r, 
-        hGDim.h = 300 - hGDim.t - hGDim.b;
+        hGDim.h = 320 - hGDim.t - hGDim.b;
             
         //create svg for histogram.
         var hGsvg = d3.select(id).append("svg")
             .attr("width", hGDim.w + hGDim.l + hGDim.r)
+.attr('width', '100%')
             .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
             .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
 
+//hGsvg.on('resize', resize);
         // create function for x-axis mapping.
         var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
                 .domain(fD.map(function(d) { return d[0]; }));
