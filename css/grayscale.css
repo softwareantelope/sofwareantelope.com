@@ -153,6 +153,7 @@ a:focus {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    background-size:100%; 
 }
 #index-page-top .intro {
 }

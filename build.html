@@ -9,7 +9,7 @@
     <meta name="description" content="A new approach to website development - speed, scaling and style. Contracts for software development.">
     <meta name="author" content="Nicholas Alexander">
 
-    <title>Services - Software Antelope Ltd</title>
+    <title>Building with Software Antelope Ltd</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -433,9 +433,10 @@ function custom(selection) {
                     <h3>Waterfall Development</h3>
                     <p>If you have prepared a specification we can provide an estimate on the scope of a project.  Tracking a waterfall project is less flexible as goals should not change.  Usually, we would expect a waterfall project to a) take longer to achieve any goals, and b) be more expensive, overall.  It is sometimes preferable to implement a solid idea, but in our changing world, Agile development can adapt and is usually more productive.
                 </div>
+            </div>
 <script>
 var svg = d3.select("#capability").append("svg")
-    .attr("width", 960)
+    .attr("width", 1200)
     .attr("height", 800)
     .attr("viewBox", "0 0 1000 800");
 
@@ -457,7 +458,6 @@ svg.append("use")
     .attr("xlink:href", "#curve");
 
 </script>
-            </div>
         </div>
     </div>
     <section id="contract" class="content-section text-center">
@@ -471,6 +471,61 @@ svg.append("use")
                     <p>Onsite or remote services by a consultant developer with server and frontend skills to implement your business idea is available via an agency.  For full profile of our consultant, see <a href="https://www.linkedin.com/profile/view?id=AAMAAADEgL4BZA6OQWifMtm395LPgpbOkAgRpkU&trk=hp-identity-name" target="_blank">Linkedin profile</a>.
                 </div>
             </div>
+<script>
+
+var width = 960,
+    height = 500,
+    radius = 6;
+
+var fill = d3.scale.category20();
+
+var force = d3.layout.force()
+    .gravity(.05)
+    .charge(-240)
+    .linkDistance(50)
+    .size([width, height]);
+
+var svg = d3.select("#contract").append("svg")
+.style('border','1px white outset')
+.style('padding','10px')
+.style('background-color','black')
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("data/forcedata.json", function(error, graph) {
+  if (error) throw error;
+
+  var link = svg.selectAll("line")
+      .data(graph.links)
+    .enter().append("line");
+
+  var node = svg.selectAll("circle")
+      .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", radius - .75)
+      .style("fill", function(d) { return fill(d.group); })
+      .style("stroke", function(d) { return d3.rgb(fill(d.group)).darker(); })
+      .call(force.drag);
+
+  force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .on("tick", tick)
+      .start();
+
+  function tick() {
+    node.attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
+        .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
+
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+  }
+});
+
+</script>
+
             <div>
                 <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <a class="page-scroll" href="#contact">Contact</a>
