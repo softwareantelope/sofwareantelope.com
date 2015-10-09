@@ -154,22 +154,8 @@ a:focus {
     background-size: cover;
     -o-background-size: cover;
 }
-#index-page-top .intro {
-}
 #services-page-top .intro {
-
-    /*
     background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
-    */
-    background: url(../img/antelope-canyon.jpg) no-repeat bottom center scroll;
-    background-size:100% 100%;
-}
-
-#services-page-top .intro {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
 }
 
 .intro .intro-body {
