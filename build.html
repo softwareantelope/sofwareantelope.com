@@ -80,8 +80,8 @@
             <div class="container">
                 <div class="row pull-right" style="margin-top:5em;">
                     <div class="col-md-2">
-                        <h4 class="brand-heading">Software Antelope</h1>
-                        <p class="intro-text">Next</p>
+                        <h3 class="brand-heading" style="margin-top:2em;">Software Antelope</h3>
+                        <p class="intro-text" style="margin-bottom:-10px;font-style:italic;">Start here</p>
                         <a href="#setup" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -133,9 +133,9 @@ path {
 </form>
 <script>
 
-var width = 1200,
-    height = 600,
-    radius = 70,
+var width = 800,
+    height = 500,
+    radius = 50,
     x = Math.sin(2 * Math.PI / 3),
     y = Math.cos(2 * Math.PI / 3);
 
@@ -233,12 +233,17 @@ d3.timer(function() {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Setup</h2>
+
                 <h4>Subscribe</h4>
-                <p>The first no-risk step is to subscribe to our CMS hosting service.  You may have a domain you wish to use, if so we will send you an update for you domain zone file (if you wish to transfer your domain to our professional registry we can do this for you).  Or, we can help you buy a new domain. 
+                <p>Your first no-risk step is to subscribe to our low cost CMS hosting service.  You can cancel within the first 14 days, no questions asked.  
+
+                <p>You may already have a domain you wish to use, if so we will send you instructions to update your domain zone file to point at your website space or you may wish to transfer your domain to our professional registry.  
+
                 <h4>Build</h4>
-                <p>The next step is we will provide you with a no-frills content management website. We will provide your Contact Us page, a basic framework of pages with menu items.  Plus instructions on how to update it yourself.  You can add as many pages as you require and link to them in menus.
+                <p>The next step is we will provide you with a no-frills content management website.  This may include a Contact Us page, plus a basic framework of pages with menu items, with instructions on how to update it yourself.  You can add as many pages as you require and link them in menus.
+
                 <h4>Publish</h4>
-                <p>Publish your web presence from day one.  Next add pages and menu items you require to support your website.  Every day you can publish new content in a news/blog format. 
+                <p>Publish your web presence from day one.  Add content when you want, and every day you can publish news in a blog format for your customers. Add social networking and communicate with your target audience. 
     </section>
     
     <!-- design Section -->
@@ -246,13 +251,17 @@ d3.timer(function() {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Design</h2>
-                <p>Your initial site is a well supported and proven template.  As build your content, it best to work with a basic template as it offers a standard for functionality.  We provide a professional design solution that extends the functional template to fully brand your site and provide a fresh and engaging user experience.
-                <p>Our design service may employ both a developer and a designer.  We take a brief of brand and functional requirements and produce a visial outline.  When you accept a design brief, we then implement it on your site. 
+
+                <p>Your content management site enables you to enter your own content using a basic template so you can build your content quickly.  
+
+                <p>We then offer a professional design solution that extends the functional template to brand your site and provide a fresh and engaging user experience.
+
+                <p>We take a brief of your brand and functional requirements to produce a visual outline with an estimate of cost.  With your design brief, we then can professionally implement it on your site.   Please note, this is an additional cost to your basic subscription.
 
 <script>
 
-var width = 1200,
-    height = 600;
+var width = 800,
+    height = 500;
 
 var points = [];
 
@@ -279,9 +288,10 @@ circle(280, +120, 0, 1, .02);
 var line = d3.svg.line()
     .interpolate("basis-closed");
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#design").append("svg")
     .attr("width", width)
     .attr("height", height)
+    .style('margin-top','-500px')
   .append("g")
     .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")");
 
@@ -338,7 +348,7 @@ function resample(points) {
                     <p>When you have a content site that presents your brand, functionality can be added.  You can engage our consultant programmer to configure one or any of the following:
 
 
-                    <ul class="list-unstyled list-group">
+                    <ul class="list-unstyled list-group h4">
                         <li>Membership
                         <li>Gallery
                         <li>Shopping cart
@@ -353,10 +363,10 @@ function resample(points) {
 d3.ns.prefix.custom = "http://github.com/mbostock/d3/examples/dom";
 
 var width = 1200,
-    height = 900;
+    height = 800;
 
 // Add our "custom" sketch element to the body.
-var sketch = d3.select("body").append("custom:sketch")
+var sketch = d3.select("#functionality").append("custom:sketch")
     .attr("width", width)
     .attr("height", height)
     .call(custom);
@@ -426,12 +436,15 @@ function custom(selection) {
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Bespoke Development Services</h2>
-                    <p>Got a great online business idea?  Want to create something unique?  Software development of full-stack web systems with databases and front end user interfaces.  <a href="#agile">Agile development</a> is reviewed every two weeks and charged on a contractual basis. If you have a specification we may provide an estimate of costs to achieve development stages. 
-                    <p>Services are provided on a <a href="#contract">contract</a> or <a href="#contract">consultancy</a> basis.</p>
+                    <p>Got a great online business idea?  Want to create something unique?  Software development of full-stack web systems from database to front-end user experience.  
+
                     <h2 id="agile">Agile Development</h2>
-                    <p>Stake-holders can track progress on their development projects.  Software Antelope uses a range of online tools that are a) simple to use, and b) allow us to collaborate with our clients, directly.  Agile development methodology is supported by a task board (we use Trello.com) and a software repository (see our github.com link under Contact).  This enables us to a) plan out each stage of delivery with full client oversight of actions agreed, and b) to deliver secure updates that provide constant progress.  Agile means constant reviewing of project goals, plus an ability to adapt to changing conditions and new ideas.
+                    <p><b>Agile development</b> is a management process for rapid and progressive software implementation.  It works for progressive web-development.
+                    <p>Stake-holders can track progress on their projects.  Software Antelope uses a range of online tools that are a) simple to use, and b) allow us to collaborate with our clients, directly.  Agile development methodology is supported by a task board (we use Trello.com) and a software repository (see our github.com link under Contact).  This enables us to a) plan out each stage of delivery with full client oversight of actions agreed, and b) to deliver safe updates that provide constant progress.  Each stage of development can be previewed and tested before release.  Agile means constant reviewing of project goals, plus an ability to adapt to changing conditions and new ideas.
                     <h3>Waterfall Development</h3>
                     <p>If you have prepared a specification we can provide an estimate on the scope of a project.  Tracking a waterfall project is less flexible as goals should not change.  Usually, we would expect a waterfall project to a) take longer to achieve any goals, and b) be more expensive, overall.  It is sometimes preferable to implement a solid idea, but in our changing world, Agile development can adapt and is usually more productive.
+                    <h3>Engagements</h3>
+                    <p>Services are provided on a <a href="#contract">contract</a> or <a href="#contract">consultancy</a> basis.</p>
                 </div>
             </div>
 <script>
@@ -464,67 +477,15 @@ svg.append("use")
         <div class="contract-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
+
                     <h3>Contract</h3>
-                    <p>A contract states the terms of trade we agree upon. We issue invoices periodically.  At the end of a service delivery, when your invoices are paid, we issue you with keys to be able to move your domain/website if you wish, or you can continue with our monthly subscription for CMS or Cloud hosting for as long as you wish.  
+                    <p>A contract states the terms of trade we agree upon. We issue invoices periodically.  At the end of a service delivery, when your invoices are paid, we issue you with keys so you can move your domain/website if you ever need to, or you can continue with our low-cost monthly subscription for CMS or Fast Cloud hosting.
                     <a name="consultancy"></a>
                     <h3>Consultancy</h3>
-                    <p>Onsite or remote services by a consultant developer with server and frontend skills to implement your business idea is available via an agency.  For full profile of our consultant, see <a href="https://www.linkedin.com/profile/view?id=AAMAAADEgL4BZA6OQWifMtm395LPgpbOkAgRpkU&trk=hp-identity-name" target="_blank">Linkedin profile</a>.
+
+                    <p>Onsite or remote services by a consultant developer with server and frontend skills to implement your business idea is available via an agency.  For full profile of our consultant, see <a href="https://www.linkedin.com/profile/view?id=AAMAAADEgL4BZA6OQWifMtm395LPgpbOkAgRpkU&trk=hp-identity-name" target="_blank">Linkedin profile</a>. Consultancy is provided on a daily-rate contract, usually via an agency.
                 </div>
             </div>
-<script>
-
-var width = 960,
-    height = 500,
-    radius = 6;
-
-var fill = d3.scale.category20();
-
-var force = d3.layout.force()
-    .gravity(.05)
-    .charge(-240)
-    .linkDistance(50)
-    .size([width, height]);
-
-var svg = d3.select("#contract").append("svg")
-.style('border','1px white outset')
-.style('padding','10px')
-.style('background-color','black')
-    .attr("width", width)
-    .attr("height", height);
-
-d3.json("data/forcedata.json", function(error, graph) {
-  if (error) throw error;
-
-  var link = svg.selectAll("line")
-      .data(graph.links)
-    .enter().append("line");
-
-  var node = svg.selectAll("circle")
-      .data(graph.nodes)
-    .enter().append("circle")
-      .attr("r", radius - .75)
-      .style("fill", function(d) { return fill(d.group); })
-      .style("stroke", function(d) { return d3.rgb(fill(d.group)).darker(); })
-      .call(force.drag);
-
-  force
-      .nodes(graph.nodes)
-      .links(graph.links)
-      .on("tick", tick)
-      .start();
-
-  function tick() {
-    node.attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
-        .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
-
-    link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
-  }
-});
-
-</script>
 
             <div>
                 <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
