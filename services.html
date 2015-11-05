@@ -98,6 +98,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Getting started</h2>
                 <p>Read through our services guide or simply <a href="#contact">contact us</a> to discuss your requirement. 
+		<p><a class="page-scroll" href="#domains">Next - Domains</a>
     </section>
     
     <!-- domains Section -->
@@ -118,10 +119,28 @@ var app = angular.module('myapp', []);
 app.controller('app', function($scope) {
     //$scope.domain= "domainname.com";
 });
+$(function() {
+    $('form').each(function() {
+        $(this).find('input').keypress(function(e) {
+            // Enter pressed?
+            if(e.which == 10 || e.which == 13) {
+		formSubmit();
+            }
+        });
+
+        $(this).find('input[type=submit]').hide();
+    });
+});
+function formSubmit() {
+	var e=document.getElementById('domain-input');
+	e.style.display="none";
+	$(document).scrollTop($('#hosting').offset().top);
+}
 </script>
-                <form id="domain-input">
+                <form ng-submit="formSubmit()" id="domain-input">
                     <p>Enter a name you would like to use</p>
-                    <input placeholder="www.domain.com" type="text" onBlur="var e=document.getElementById('domain-input');e.style.display='none'" ng-model="domain">
+                    <input placeholder="www.domain.com" type="text" onBlur="formSubmit()" ng-model="domain">
+                    <input type="submit" style="position: absolute; left: -9999px"/>
                 </form>
             </div>
         </div>
@@ -142,13 +161,13 @@ app.controller('app', function($scope) {
                               <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#shared-section" aria-expanded="true" aria-controls="collapseOne">
                                   <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                  Shared Hosting
+                                  CMS Hosting
                                 </a>
                               </h4>
                             </div>
                             <div id="shared-section" class="collapse panel-collapse">
                               <div class="panel-body" style="color:#333">
-                                <p>Shared Hosting provides many resources that are easily configured for you.  Within a short period of time you can have a fully working CMS installation, customise a template that gives you immediate web presence.  Email addresses and full site management are also available.  We highly recommend WordPress for this purpose for its incredibly easy operation, rich set of template resources and plug in resources that support blogs, social media, ecommerce, galleries, publishing, and so much more.
+                                <p>CMS (Content Management System) Hosting provides many resources configured for your website.  Within a short period of time you can get your content on the web and then customise a template. We highly recommend WordPress for its straight forward operation, rich set of template resources and plug-in resources to support blogs, social media, ecommerce, galleries, publishing, and much more. 
                               </div>
                             </div>
                           </div>
@@ -188,9 +207,11 @@ app.controller('app', function($scope) {
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Subscription</h2>
                     <p>Software Antelope provides a subscription service.  Basic and Cloud.  Your website is developed on our hosting resources and launched on our cloud.  Your subscription fee includes all maintainance of your hosting resource including adding services.  Services such as software development are charged for separately.  When your resource development is complete, you can continue to host it with us by simply maintaining your subscription.  Or you can move it to your own services, change your DNS settings and terminate your subscription.  This provides a clear, simple, flexible and cost effective solution to both web development and hosting.
-                    <p>CMS £35 per month (cms starter sites, email)
-                    <p>Cloud £50 per month (busy sites, software development)
                     <p>Startup special - see our <a href="https://cms.softwareantelope.com/shop">CMS ecommerce site for incredible deals on one year subscriptions</a>.
+                    <p><i>coming soon...</i>
+
+                    <li>CMS from £35 per month (cms starter sites, email)
+                    <li>Cloud from £45 per month (busy sites, software development)
                 </div>
             </div>
                 <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
