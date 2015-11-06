@@ -98,7 +98,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Getting started</h2>
                 <p>Read through our services guide or simply <a href="#contact">contact us</a> to discuss your requirement. 
-		<p><a class="page-scroll" href="#domains">Next - Domains</a>
+		<p><a class="btn btn-default page-scroll" href="#domains">Next - Domains</a>
     </section>
     
     <!-- domains Section -->
@@ -106,9 +106,10 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Your Domain</h2>
-                <p>Your domain is your unique identity on the web.  It consists of three parts: prefix.yourname.suffix.
-                <p>.com is the most common domain suffix, location specific suffixes such as .co.uk are also available, but now you can also a <a href="http://www.techdictionary.com/domainlist_new.html" target="blank">large range of meaningful suffixes</a>.  For example: .london, .gallery, .technology, .company and hundreds of others are now available making a meaningful domain for your business more available. The prefix can support multiple websites or services, for example: www.
-                <p>You may have registered a domain already, or we can register one for you.  We will provide zone file configuration details to attach your services.  
+                <p>Your domain is your unique identity on the web.  It consists of three parts: <code>prefix.yourname.suffix</code>.
+                <p>.com is the most familar domain suffix. Location specific suffixes like .co.uk are also available.  
+		<p>A <a href="http://www.techdictionary.com/domainlist_new.html" target="blank">large range of meaningful suffixes</a> are now available.  For example: .london, .gallery, .technology, .company and hundreds of others to make a meaningful domain name for your business. The prefix can support multiple websites or services, for example: www. or mail. or cms.
+                <p>You may have a domain or we can register one for you.  We will provide zone file configuration details to attach your services.  
 <style>
     input { 
         color:black;
@@ -138,8 +139,7 @@ function formSubmit() {
 }
 </script>
                 <form ng-submit="formSubmit()" id="domain-input">
-                    <p>Enter a name you would like to use</p>
-                    <input placeholder="www.domain.com" type="text" onBlur="formSubmit()" ng-model="domain">
+                    <p>Enter a name you would like to use <input placeholder="www.domain.com" type="text" onBlur="formSubmit()" ng-model="domain">
                     <input type="submit" style="position: absolute; left: -9999px"/>
                 </form>
             </div>
@@ -151,8 +151,7 @@ function formSubmit() {
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Hosting {{domain}}</h2>
-                    <p>Hosting a website need not be complicated.  There are many options available but to offer you the best of both worlds, we support two basic forms of hosting, each has their own advantages. Click on the panels below for more information.
-
+                    <p>Hosting a website need not be complicated.  We support two basic forms of hosting, each having advantages. Click on the panels below for more information.
 
                     <div class="row">
                         <div class="col-md-6">
@@ -167,7 +166,7 @@ function formSubmit() {
                             </div>
                             <div id="shared-section" class="collapse panel-collapse">
                               <div class="panel-body" style="color:#333">
-                                <p>CMS (Content Management System) Hosting provides many resources configured for your website.  Within a short period of time you can get your content on the web and then customise a template. We highly recommend WordPress for its straight forward operation, rich set of template resources and plug-in resources to support blogs, social media, ecommerce, galleries, publishing, and much more. 
+                                <p>CMS (Content Management System) Hosting provides many resources configured for your website.  Within a short period of time you can get your content on the web and then customise a template. We highly recommend WordPress for its straight forward operation, rich set of template resources and plug-in resources to support blogs, social media, ecommerce, galleries, publishing, and more. 
                               </div>
                             </div>
                           </div>
@@ -196,8 +195,7 @@ function formSubmit() {
                     </div>
                 </div>
             </div>
-            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a class="page-scroll" href="#contact">Contact</a>
+            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
         </div>
     </section>
 
@@ -207,15 +205,14 @@ function formSubmit() {
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Subscription</h2>
                     <p>Software Antelope provides a subscription service.  Basic and Cloud.  Your website is developed on our hosting resources and launched on our cloud.  Your subscription fee includes all maintainance of your hosting resource including adding services.  Services such as software development are charged for separately.  When your resource development is complete, you can continue to host it with us by simply maintaining your subscription.  Or you can move it to your own services, change your DNS settings and terminate your subscription.  This provides a clear, simple, flexible and cost effective solution to both web development and hosting.
-                    <p>Startup special - see our <a href="https://cms.softwareantelope.com/shop">CMS ecommerce site for incredible deals on one year subscriptions</a>.
+                    <p>Startup special - see our <a class="btn btn-default" href="https://cms.softwareantelope.com/shop">CMS ecommerce site for incredible deals on one year subscriptions</a>.
                     <p><i>coming soon...</i>
 
                     <li>CMS from £35 per month (cms starter sites, email)
                     <li>Cloud from £45 per month (busy sites, software development)
                 </div>
             </div>
-                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <a class="page-scroll" href="#contact">Contact</a>
+            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
         </div>
     </section>
 
@@ -244,10 +241,7 @@ function formSubmit() {
                     <p>Onsite or remote services by a consultant developer with server and frontend skills to implement your business idea.  We provide an estimate and invoice you every two weeks.  For full profile of our consultant, see <a href="https://www.linkedin.com/profile/view?id=AAMAAADEgL4BZA6OQWifMtm395LPgpbOkAgRpkU&trk=hp-identity-name" target="_blank">Linkedin profile</a>.
                 </div>
             </div>
-            <div>
-                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <a class="page-scroll" href="#contact">Contact</a>
-            </div>
+            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
         </div>
     </section>
 
@@ -257,7 +251,8 @@ function formSubmit() {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Software Antelope</h2>
-                <p>Nicholas Alexander <a href="mailto:info@softwareantelope.com">email</a></p>
+		<p>Software Antelope Ltd is an online service.  We do everything via the internet, in the first instance please contact me via email, UK clients can request a phone call if you want to discuss your requirements or you can simply go to our CMS site to <a class="btn btn-default" href="https://cms.softwareantelope.com/shop">order what you need</a>.
+                <p>Nicholas Alexander - Director <a class="btn btn-default" href="mailto:info@softwareantelope.com">email</a></p>
         
                 <ul style="display:block" class="list-inline banner-social-buttons">
                     <li>
