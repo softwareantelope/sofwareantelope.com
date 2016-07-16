@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=0.5, maximum-scale=1.0">
+    <meta name="description" content="A new approach to website development - speed, scaling and style. Contracts for software development.">
+    <meta name="author" content="Nicholas Alexander">
+
+    <title>Services - Software Antelope Ltd</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="js/lib/jquery.min.js"></script>
+    <!-- d3, tools -->
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/gauge.js"></script>
+    <script src="js/lib/lodash.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+</head>
+<body onLoad="initialize()" ng-app="myapp" ng-controller="app" id="services-page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Home</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#domains">Domains</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#hosting">Hosting</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#subscription">Subscription</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#development">Development</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Software Antelope</h1>
+                        <p class="intro-text">SERVICES</p>
+                        <a href="#start" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="start" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Getting started</h2>
+                <p>Read through our services guide or simply <a href="#contact">contact us</a> to discuss your requirement. 
+		<p><a class="btn btn-default page-scroll" href="#domains">Next - Domains</a>
+    </section>
+    
+    <!-- domains Section -->
+    <section id="domains" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Your Domain</h2>
+                <p>Your domain is your unique identity on the web.  It consists of three parts: <code>prefix.yourname.suffix</code>.
+                <p>You may have a domain or we can <a href="https://cms.softwareantelope.com/products/domains/">register one for you</a>.  We will provide zone file configuration details to attach your services.  
+<style>
+    input { 
+        color:black;
+    }
+</style>
+<script>
+var app = angular.module('myapp', []);
+app.controller('app', function($scope) {
+    //$scope.domain= "domainname.com";
+});
+$(function() {
+    $('form').each(function() {
+        $(this).find('input').keypress(function(e) {
+            // Enter pressed?
+            if(e.which == 10 || e.which == 13) {
+		formSubmit();
+            }
+        });
+
+        $(this).find('input[type=submit]').hide();
+    });
+});
+function formSubmit() {
+	var e=document.getElementById('domain-input');
+	e.style.display="none";
+	$(document).scrollTop($('#hosting').offset().top);
+}
+</script>
+                <form ng-submit="formSubmit()" id="domain-input">
+                    <p>Enter a name you would like to use <input placeholder="www.domain.com" type="text" onBlur="formSubmit()" ng-model="domain">
+                    <input type="submit" style="position: absolute; left: -9999px"/>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="hosting" class="content-section text-center">
+        <div class="hosting-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Hosting {{domain}}</h2>
+                    <p>Hosting a website need not be complicated.  We support two basic forms of hosting, each having advantages. Click on the panels below for more information.
+
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingshared">
+                              <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#shared-section" aria-expanded="true" aria-controls="collapseOne">
+                                  <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  CMS Hosting
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="shared-section" class="collapse panel-collapse">
+                              <div class="panel-body" style="color:#333">
+                                <p>CMS (Content Management System) Hosting provides many resources configured for your website.  Within a short period of time you can get your content on the web and then customise a template. We highly recommend WordPress for its straight forward operation, rich set of template resources and plug-in resources to support blogs, social media, ecommerce, galleries, publishing, and more. 
+				<p><a href="https://cms.softwareantelope.com/shop/hosting/cms-hosting-wordpress-install/" class="btn btn-default">Get CMS Hosting today!</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingcloud">
+                              <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#cloud-section" aria-expanded="true" aria-controls="collapseOne">
+                                  <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  Cloud Hosting
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="cloud-section" class="collapse panel-collapse">
+                              <div class="panel-body" style="color:#333">
+                                <p>Cloud based services scale more effectively.  We help you manage a huge web based resource (40 Gig storage in fast SSD Drives, 2TB transfer) mangaged with Fast NGinx SSL and regular web services, plus dedicated smaller hosts configured as secure Database servers, secure mail servers or dedicated game servers.  We only charge on a monthly basis, POA.
+				<p><a href="https://cms.softwareantelope.com/shop/hosting/cloud-hosting-introductory-1-year-subscription/" class="btn btn-default">Get Cloud Hosting today!</a>
+				<p><a href="https://cms.softwareantelope.com/products/cloud-hosting/" class="btn btn-default">More informatioon</a>
+                              </div>
+<span id="memoryGaugeContainer"></span>
+<span id="networkGaugeContainer"></span>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="subscription" class="content-section text-center">
+        <div class="subscription-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Subscription</h2>
+                    <p>Software Antelope provides hosting on a monthly or annual subscription. Your website may be developed on our CMS hosting resources and then upgraded to our high speed Cloud.  A clear, simple, flexible and cost effective solution to both web development and hosting.
+                    <p>Annual subscription deals
+			<br><a class="btn btn-default" href="https://cms.softwareantelope.com/shop">CMS (incluidng ecommerce) one year subscription</a>.
+			<br><a class="btn btn-default" href="https://cms.softwareantelope.com/shop">Cloud one year subscription</a>.
+                </div>
+            </div>
+            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="development" class="content-section text-center">
+        <div class="development-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Bespoke Development Services</h2>
+                    <p>Got a great online business idea?  Software development of full-stack web systems with databases and front end user interfaces.  <a href="#agile">Agile development</a> reviewed every two weeks charged on a contractual daily rate basis, or if you have a specification we can provide an estimate of costs to achieve development stages. Services are provided on a <a href="#contract">contract</a> or <a href="#contract">consultancy</a> basis.</p>
+
+                    <h2>Software Stack</h2>
+		<p>
+<a frameborder="0" data-theme="dark" data-stack-embed="true" data-layers="1,2,3,4" href="https://embed.stackshare.io/stacks/embed/bc06556385996c"/></a><script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>
+		</p>
+                    <h2>Agile Development</h2>
+                    <p>Stake-holders track progress and collaborate on development projects.  Agile development is supported by a task board and a software repository, to a) plan out each delivery stage with client oversight of actions agreed, and b) secure softwarwe update delvery.  
+                    <p>Agile means constant reviewing of project goals, plus an ability to adapt to changing conditions and new ideas.  Most customers prefer to work this way.
+            	<p><span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
+                    <h3>Waterfall Development</h3>
+                    <p>To deliver software project to plan every stage is detailed in a prepared specification document.  We can provide an estimate on the scope of a project.  Tracking a waterfall project is less flexible as goals should not change.  It is sometimes preferable to implement a solid idea, but in our changing world, Agile development is usually more appropriate.
+            	<p><span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contract" class="content-section text-center">
+        <div class="contract-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h3>Contract</h3>
+                    <p>Major contracts of engagement with Software Antelope are managed via a third party agency, or directly with our Standard Agile Contract.  Get in touch with our developer directly in the first instance.  
+                    <a name="consultancy"></a>
+                    <h3>Consultancy</h3>
+                    <p>Onsite or remote services by a consultant developer with server and frontend skills to implement your business idea.  We provide an estimate and invoice every two weeks.  For full profile of our consultant, see <a href="https://www.linkedin.com/profile/view?id=AAMAAADEgL4BZA6OQWifMtm395LPgpbOkAgRpkU&trk=hp-identity-name" target="_blank">Linkedin profile</a>.
+                </div>
+            </div>
+            <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <a class="btn btn-default page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Software Antelope</h2>
+		<p>Software Antelope Ltd is an online service.  We do everything via the internet, in the first instance please contact me via email, UK clients can request a phone call if you want to discuss your requirements or you can simply go to our CMS site to <a class="btn btn-default" href="https://cms.softwareantelope.com/shop">order what you need</a>.
+                <p>Nicholas Alexander - Director <a class="btn btn-default" href="mailto:info@softwareantelope.com">email</a></p>
+        
+                <ul style="display:block" class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/nalexander" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/softwareantelope" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+NicholasAlexander1/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="divider2" class="content-section text-center">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="copyright" style="font-size:small">Copyright &copy; Software Antelope Ltd 2015</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/lib/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/lib/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!-- Map Section -->
+    <!-- div id="map"></div -->
+
+    <!-- script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/lib/grayscale.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68322304-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+var gauges = [];
+function createGauge(name, label, min, max) {
+    var config = {
+        size: 120,
+        label: label,
+        min: undefined != min ? min : 0,
+        max: undefined != max ? max : 100,
+        minorTicks: 5
+    }
+    
+    var range = config.max - config.min;
+    config.yellowZones = [{ from: config.min + range*0.75, to: config.min + range*0.9 }];
+    config.redZones = [{ from: config.min + range*0.9, to: config.max }];
+    
+    gauges[name] = new Gauge(name + "GaugeContainer", config);
+    gauges[name].render();
+}
+
+function createGauges() {
+    createGauge("memory", "Memory");
+    //createGauge("cpu", "CPU");
+    createGauge("network", "Network");
+    //createGauge("test", "Test", -50, 50 );
+}
+
+function updateGauges() {
+    for (var key in gauges)
+    {
+        var value = getRandomValue(gauges[key])
+        gauges[key].redraw(value);
+    }
+}
+
+function getRandomValue(gauge) {
+    var overflow = 0; //10;
+    return gauge.config.min - overflow + (gauge.config.max - gauge.config.min + overflow*2) *  Math.random();
+}
+
+function initialize() {
+    createGauges();
+    setInterval(updateGauges, 5000);
+}
+/*
+var zoom = d3.behavior.zoom();
+gauges.call(zoom);
+zoom.scale(20);
+*/
+</script>
+</body>
+</html>

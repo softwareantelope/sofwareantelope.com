@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=0.5, maximum-scale=1.0">
+    <meta name="description" content="A new approach to website development - speed, scaling and style. Contracts for software development.">
+    <meta name="author" content="Nicholas Alexander">
+
+    <title>Building with Software Antelope Ltd</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery -->
+    <script src="js/lib/jquery.min.js"></script>
+    <!-- d3, tools -->
+    <script src="js/lib/d3.min.js"></script>
+    <script src="js/lib/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+</head>
+<body id="build-page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Home</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#setup">Setup</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#design">Design</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#functionality">Functionality</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#capability">Capability</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro-build">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row pull-right" style="margin-top:5em;">
+                    <div class="col-md-2">
+                        <h3 class="brand-heading" style="margin-top:2em;">Software Antelope</h3>
+                        <p class="intro-text" style="margin-bottom:-10px;font-style:italic;">Start here</p>
+                        <a href="#setup" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </header>
+    <section>
+       <div class="moveup row">
+<style>
+.moveup {
+    position:absolute; top:0px;
+}
+form#gears {
+  position: absolute;
+  top: 20em;
+  left: 14em;
+  width:20em;
+}
+
+path {
+  fill-rule: evenodd;
+  stroke: #333;
+  stroke-width: 2px;
+}
+
+.sun path {
+  fill: #6baed6;
+}
+
+.planet path {
+  fill: #9ecae1;
+}
+
+.annulus path {
+  fill: #c6dbef;
+}
+
+</style>
+<form id="gears">
+<h3>Making your site work for you</h4>
+  <input type="radio" name="reference" id="ref-annulus">
+  <label for="ref-annulus">Setup</label><br>
+  <input type="radio" name="reference" id="ref-planet" checked>
+  <label for="ref-planet">Design</label><br>
+  <input type="radio" name="reference" id="ref-sun">
+  <label for="ref-sun">Function</label>
+</form>
+<script>
+
+var width = 800,
+    height = 500,
+    radius = 50,
+    x = Math.sin(2 * Math.PI / 3),
+    y = Math.cos(2 * Math.PI / 3);
+
+var offset = 0,
+    speed = 4,
+    start = Date.now();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
+  .append("g");
+
+var frame = svg.append("g")
+    .datum({radius: Infinity});
+
+frame.append("g")
+    .attr("class", "annulus")
+    .datum({teeth: 80, radius: -radius * 5, annulus: true})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "sun")
+    .datum({teeth: 16, radius: radius})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "planet")
+    .attr("transform", "translate(0,-" + radius * 3 + ")")
+    .datum({teeth: 32, radius: -radius * 2})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "planet")
+    .attr("transform", "translate(" + -radius * 3 * x + "," + -radius * 3 * y + ")")
+    .datum({teeth: 32, radius: -radius * 2})
+  .append("path")
+    .attr("d", gear);
+
+frame.append("g")
+    .attr("class", "planet")
+    .attr("transform", "translate(" + radius * 3 * x + "," + -radius * 3 * y + ")")
+    .datum({teeth: 32, radius: -radius * 2})
+  .append("path")
+    .attr("d", gear);
+
+d3.selectAll("input[name=reference]")
+    .data([radius * 5, Infinity, -radius])
+    .on("change", function(radius1) {
+      var radius0 = frame.datum().radius, angle = (Date.now() - start) * speed;
+      frame.datum({radius: radius1});
+      svg.attr("transform", "rotate(" + (offset += angle / radius0 - angle / radius1) + ")");
+    });
+
+d3.selectAll("input[name=speed]")
+    .on("change", function() { speed = +this.value; });
+
+function gear(d) {
+  var n = d.teeth,
+      r2 = Math.abs(d.radius),
+      r0 = r2 - 8,
+      r1 = r2 + 8,
+      r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,
+      da = Math.PI / n,
+      a0 = -Math.PI / 2 + (d.annulus ? Math.PI / n : 0),
+      i = -1,
+      path = ["M", r0 * Math.cos(a0), ",", r0 * Math.sin(a0)];
+  while (++i < n) path.push(
+      "A", r0, ",", r0, " 0 0,1 ", r0 * Math.cos(a0 += da), ",", r0 * Math.sin(a0),
+      "L", r2 * Math.cos(a0), ",", r2 * Math.sin(a0),
+      "L", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
+      "A", r1, ",", r1, " 0 0,1 ", r1 * Math.cos(a0 += da / 3), ",", r1 * Math.sin(a0),
+      "L", r2 * Math.cos(a0 += da / 3), ",", r2 * Math.sin(a0),
+      "L", r0 * Math.cos(a0), ",", r0 * Math.sin(a0));
+  path.push("M0,", -r3, "A", r3, ",", r3, " 0 0,0 0,", r3, "A", r3, ",", r3, " 0 0,0 0,", -r3, "Z");
+  return path.join("");
+}
+
+d3.timer(function() {
+  var angle = (Date.now() - start) * speed,
+      transform = function(d) { return "rotate(" + angle / d.radius + ")"; };
+  frame.selectAll("path").attr("transform", transform);
+  frame.attr("transform", transform); // frame of reference
+});
+
+</script>
+       </div>
+   </section> 
+
+    <section id="setup" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Setup</h2>
+
+                <h4>Subscribe</h4>
+                <p>Your first no-risk step is to subscribe to our low cost CMS hosting service.  You can cancel within the first 14 days, no questions asked.  
+
+                <p>You may already have a domain you wish to use, if so we will send you instructions to update your domain zone file to point at your website space or you may wish to transfer your domain to our professional registry.  
+
+                <h4>Build</h4>
+                <p>The next step is we will provide you with a no-frills content management website.  This may include a Contact Us page, plus a basic framework of pages with menu items, with instructions on how to update it yourself.  You can add as many pages as you require and link them in menus.
+
+                <h4>Publish</h4>
+                <p>Publish your web presence from day one.  Add content when you want, and every day you can publish news in a blog format for your customers. Add social networking and communicate with your target audience. 
+    </section>
+    
+    <!-- design Section -->
+    <section id="design" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Design</h2>
+
+                <p>Your content management site enables you to enter your own content using a basic template so you can build your content quickly.  
+
+                <p>We then offer a professional design solution that extends the functional template to brand your site and provide a fresh and engaging user experience.
+
+                <p>We take a brief of your brand and functional requirements to produce a visual outline with an estimate of cost.  With your design brief, we then can professionally implement it on your site.   Please note, this is an additional cost to your basic subscription.
+
+<script>
+
+var width = 800,
+    height = 500;
+
+var points = [];
+
+var bounds = d3.geom.polygon([
+  [-width / 2, -height / 2],
+  [-width / 2, +height / 2],
+  [+width / 2, +height / 2],
+  [+width / 2, -height / 2]
+]);
+
+circle(0, 0, 120, 96, -.001);
+circle(0, 0, 30, 10, .03);
+circle(0, 0, 60, 3, -.05);
+circle(0, 0, 15, 4, -.02);
+circle(0, 0, 0, 1, -.02);
+
+circle(240, -120, 80, 4, -.02);
+circle(240, -120, 0, 1, -.02);
+
+circle(280, +120, 40, 8, .02);
+circle(280, +120, 20, 8, -.02);
+circle(280, +120, 0, 1, .02);
+
+var line = d3.svg.line()
+    .interpolate("basis-closed");
+
+var svg = d3.select("#design").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .style('margin-top','-500px')
+  .append("g")
+    .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")");
+
+var path = svg.selectAll("path")
+    .data(points)
+  .enter().append("path");
+
+d3.timer(function() {
+  var voronoi = d3.geom.voronoi(points).map(function(cell) { return bounds.clip(cell); });
+  path.attr("d", function(point, i) { return line(resample(voronoi[i])); });
+});
+
+function circle(cx, cy, r, n, δθ) {
+  d3.range(1e-6, 2 * Math.PI, 2 * Math.PI / n).map(function(θ) {
+    var point = [cx + Math.cos(θ) * r, cy + Math.sin(θ) * r];
+    d3.timer(function() {
+      θ += δθ;
+      point[0] = cx + Math.cos(θ) * r;
+      point[1] = cy + Math.sin(θ) * r;
+    });
+    points.push(point);
+    return point;
+  });
+}
+
+function resample(points) {
+  var i = -1,
+      n = points.length,
+      p0 = points[n - 1], x0 = p0[0], y0 = p0[1], p1, x1, y1,
+      points2 = [];
+  while (++i < n) {
+    p1 = points[i], x1 = p1[0], y1 = p1[1];
+    points2.push(
+      [(x0 * 2 + x1) / 3, (y0 * 2 + y1) / 3],
+      [(x0 + x1 * 2) / 3, (y0 + y1 * 2) / 3],
+      p1
+    );
+    p0 = p1, x0 = x1, y0 = y1;
+  }
+  return points2;
+}
+
+</script>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="functionality" class="content-section text-center">
+        <div class="functionality-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Functionalty</h2>
+                    <p>When you have a content site that presents your brand, functionality can be added.  You can engage our consultant programmer to configure one or any of the following:
+
+
+                    <ul class="list-unstyled list-group h4">
+                        <li>Membership
+                        <li>Gallery
+                        <li>Shopping cart
+                        <li>Accept credit card payments via Stripe
+                        <li>Social networking links
+                        <li>Statistics
+                        <li>many other options are also available
+                    </ul>
+<script>
+
+// Register the "custom" namespace prefix for our custom elements.
+d3.ns.prefix.custom = "http://github.com/mbostock/d3/examples/dom";
+
+var width = 1200,
+    height = 800;
+
+// Add our "custom" sketch element to the body.
+var sketch = d3.select("#functionality").append("custom:sketch")
+    .attr("width", width)
+    .attr("height", height)
+    .call(custom);
+
+// On each mouse move, create a circle that increases in size and fades away.
+d3.select(window).on("mousemove", function() {
+  sketch.append("custom:circle")
+      .attr("x", d3.event.clientX)
+      .attr("y", d3.event.clientY)
+      .attr("radius", 0)
+      .attr("strokeStyle", "red")
+    .transition()
+      .duration(2000)
+      .ease(Math.sqrt)
+      .attr("radius", 200)
+      .attr("strokeStyle", "white")
+      .remove();
+});
+
+function custom(selection) {
+  selection.each(function() {
+    var root = this,
+        canvas = root.parentNode.appendChild(document.createElement("canvas")),
+        context = canvas.getContext("2d");
+
+    canvas.style.position = "absolute";
+    canvas.style.top = root.offsetTop + "px";
+    canvas.style.left = root.offsetLeft + "px";
+
+    // It'd be nice to use DOM Mutation Events here instead.
+    // However, they appear to arrive irregularly, causing choppy animation.
+    d3.timer(redraw);
+
+    // Clear the canvas and then iterate over child elements.
+    function redraw() {
+      canvas.width = root.getAttribute("width");
+      canvas.height = root.getAttribute("height");
+      for (var child = root.firstChild; child; child = child.nextSibling) draw(child);
+    }
+
+    // For now we only support circles with strokeStyle.
+    // But you should imagine extending this to arbitrary shapes and groups!
+    function draw(element) {
+      switch (element.tagName) {
+        case "circle": {
+          context.strokeStyle = element.getAttribute("strokeStyle");
+          context.beginPath();
+          context.arc(element.getAttribute("x"), element.getAttribute("y"), element.getAttribute("radius"), 0, 2 * Math.PI);
+          context.stroke();
+          break;
+        }
+      }
+    }
+  });
+};
+
+</script>
+                </div>
+            </div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+        </div>
+    </section>
+
+    <section id="capability" class="content-section text-center">
+        <div class="capability-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Bespoke Development Services</h2>
+                    <p>Got a great online business idea?  Want to create something unique?  Software development of full-stack web systems from database to front-end user experience.  
+
+                    <h2 id="agile">Agile Development</h2>
+                    <p><b>Agile development</b> is a management process for rapid and progressive software implementation.  It works for progressive web-development.
+                    <p>Stake-holders can track progress on their projects.  Software Antelope uses a range of online tools that are a) simple to use, and b) allow us to collaborate with our clients, directly.  Agile development methodology is supported by a task board (we use Trello.com) and a software repository (see our github.com link under Contact).  This enables us to a) plan out each stage of delivery with full client oversight of actions agreed, and b) to deliver safe updates that provide constant progress.  Each stage of development can be previewed and tested before release.  Agile means constant reviewing of project goals, plus an ability to adapt to changing conditions and new ideas.
+                    <h3>Waterfall Development</h3>
+                    <p>If you have prepared a specification we can provide an estimate on the scope of a project.  Tracking a waterfall project is less flexible as goals should not change.  Usually, we would expect a waterfall project to a) take longer to achieve any goals, and b) be more expensive, overall.  It is sometimes preferable to implement a solid idea, but in our changing world, Agile development can adapt and is usually more productive.
+                    <h3>Engagements</h3>
+                    <p>Services are provided on a <a href="#contract">contract</a> or <a href="#contract">consultancy</a> basis.</p>
+                </div>
+            </div>
+<script>
+var svg = d3.select("#capability").append("svg")
+    .attr("width", 1200)
+    .attr("height", 800)
+    .attr("viewBox", "0 0 1000 800");
+
+svg.append("defs").append("path")
+    .attr("id", "curve")
+    .attr("d", "M100,200C200,100 300,0 400,100C500,200 600,300 700,200C800,100 900,100 900,100");
+
+svg.append("text")
+    .attr("id", "curve-text")
+    .attr('stroke','white')
+    .style("color", 'navy')
+    .attr("font-size", '20px')
+  .append("textPath")
+    .attr("xlink:href", "#curve")
+    .text("Agile development allows progress along a path.");
+
+svg.append("use")
+    .attr("id", "curve-line")
+    .attr("xlink:href", "#curve");
+
+</script>
+        </div>
+    </div>
+    <section id="contract" class="content-section text-center">
+        <div class="contract-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+
+                    <h3>Contract</h3>
+                    <p>A contract states the terms of trade we agree upon. We issue invoices periodically.  At the end of a service delivery, when your invoices are paid, we issue you with keys so you can move your domain/website if you ever need to, or you can continue with our low-cost monthly subscription for CMS or Fast Cloud hosting.
+                    <a name="consultancy"></a>
+                    <h3>Consultancy</h3>
+
+                    <p>Onsite or remote services by a consultant developer with server and frontend skills to implement your business idea is available via an agency.  For full profile of our consultant, see <a href="https://www.linkedin.com/profile/view?id=AAMAAADEgL4BZA6OQWifMtm395LPgpbOkAgRpkU&trk=hp-identity-name" target="_blank">Linkedin profile</a>. Consultancy is provided on a daily-rate contract, usually via an agency.
+                </div>
+            </div>
+
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Software Antelope</h2>
+                <p>Nicholas Alexander <a href="mailto:info@softwareantelope.com">email</a></p>
+        
+                <ul style="display:block" class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/nalexander" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/softwareantelope" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+NicholasAlexander1/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="divider2" class="content-section text-center">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="copyright" style="font-size:small">Copyright &copy; Software Antelope Ltd 2015</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/lib/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/lib/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!-- Map Section -->
+    <!-- div id="map"></div -->
+
+    <!-- script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/lib/grayscale.js"></script>
+
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68322304-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

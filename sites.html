@@ -9,14 +9,12 @@
     <meta name="description" content="A new approach to website development - speed, scaling and style. Contracts for software development.">
     <meta name="author" content="Nicholas Alexander">
 
-    <title>Software Antelope Ltd</title>
+    <title>CMS Sample sites - Software Antelope Ltd</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
-    <link href="css/sb.css" rel="stylesheet" type="text/css">
-    <link href="css/db.css" rel="stylesheet" type="text/css">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,9 +31,10 @@
     <!-- d3, tools -->
     <script src="js/lib/d3.min.js"></script>
     <script src="js/lib/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 
 </head>
-<body id="index-page-top" class="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="build-page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -44,7 +43,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                <a class="navbar-brand page-scroll" href="index.html">
                     <i class="fa fa-play-circle"></i>  <span class="light">Home</span>
                 </a>
             </div>
@@ -57,13 +56,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#cms">CMS</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="services.html">Services</a>
+                        <a class="page-scroll" href="#shop">Shop</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#community">Community</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#cloud">Cloud</a>
                     </li>
                 </ul>
             </div>
@@ -73,36 +75,80 @@
     </nav>
 
     <!-- Intro Header -->
-    <header class="intro">
+    <header class="intro-build">
         <div class="intro-body">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Software Antelope</h1>
-                        <p class="intro-text">A new approach to software development.</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
+                <div class="row pull-right" style="margin-top:5em;">
+                    <div class="col-md-8 col-offset-md-2">
+                        <h4 class="brand-heading">Software Antelope</h1>
+                        <p class="intro-text">Next</p>
+                        <a href="#setup" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+       </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="cms" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Software Antelope</h2>
-        <p>Years of industry experience exclusively available to London corporate clients form the core of our delivery infrastructure. Now we can support your projects.</p> 
-
-        <p>This site is hosted on the Antelope Cloud where we build high-speed scaleable website architecture using some of the most advanced tools available.  We also provide do-it-yourself content management systems that clients can easily maintain themselves.</p>  
-
-        <p>CMS introductory offer <a href="https://cms.softwareantelope.com/shop/hosting/cms-hosting-wordpress-install/">CMS Site from only £275 per annum</a>
-        <p>Cloud introductory offer <a href="https://cms.softwareantelope.com/shop/hosting/cloud-hosting-introductory-1-year-subscription/">Cloud Site from only £375 per annum</a>
+                <h2>CMS</h2>
+                <h4>Simple site</h4>
+                <p>A site with the core information pages required to inform your customers. Easy to setup and maintain.
+            </div>
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
             </div>
         </div>
     </section>
+
+    <section id="shop" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Shop</h2>
+                <h4>Gallery</h4>
+                <p>A collections of images to show off your product or service. 
+                <h4>Stripe</h4>
+                <p>Accept payments directly into your bank account every time you sell your product or service.
+            </div>
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Community</h2>
+                <h4>Authors, Contributors and Editors</h4>
+                <p>Invite contributors, appoint editors who can choose to include their content, and recruit authors who can post content at will.  Build your community site.
+            </div>
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cloud" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Cloud</h2>
+                <h4>Speed, scaleability, expansion</h4>
+                <p>Move your site and all its data and serve it from the cloud.  Supports growth, scalability and speed.
+            </div>
+            <div>
+                <span class="glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <a class="page-scroll" href="#contact">Contact</a>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
@@ -115,9 +161,9 @@
                     <li>
                         <a href="https://twitter.com/nalexander" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
-                    <!--li>
+                    <li>
                         <a href="https://github.com/softwareantelope" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li-->
+                    </li>
                     <li>
                         <a href="https://plus.google.com/+NicholasAlexander1/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
