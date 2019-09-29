@@ -130,15 +130,21 @@ $(function() {
         $(this).find('input[type=submit]').hide();
     });
 });
+var domain;
 function formSubmit() {
 	var e=document.getElementById('domain-input');
 	e.style.display="none";
+	domain = e.getElementsByTagName('input')[0].value;
+	var c = document.getElementById('hostingtitle');
+	c.innerHTML='Hosting ' + domain;
 	$(document).scrollTop($('#hosting').offset().top);
 }
 </script>
                 <form ng-submit="formSubmit()" id="domain-input">
-                    <p>Enter a name you would like to use <input placeholder="www.domain.com" type="text" onBlur="formSubmit()" ng-model="domain">
-                    <input type="submit" style="position: absolute; left: -9999px"/>
+                    <p>Enter a name you would like to use 
+			<input placeholder="www.domain.com" type="text" onBlur="formSubmit()" name="domain">
+                    	<input type="submit" style="position: absolute; left: -9999px"/>
+		</p>
                 </form>
             </div>
         </div>
@@ -148,7 +154,7 @@ function formSubmit() {
         <div class="hosting-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Hosting {{domain}}</h2>
+                    <h2 id="hostingtitle">Hosting your domain</h2>
                     <p>Hosting a website need not be complicated.  We support two basic forms of hosting, each having advantages. Click on the panels below for more information.
 
                     <div class="row">
@@ -164,7 +170,7 @@ function formSubmit() {
                             </div>
                             <div id="shared-section" class="collapse panel-collapse">
                               <div class="panel-body" style="color:#333">
-                                <p>CMS (Content Management System) Hosting provides many resources configured for your website.  Within a short period of time you can get your content on the web and then customise a template. We highly recommend WordPress for its straight forward operation, rich set of template resources and plug-in resources to support blogs, social media, ecommerce, galleries, publishing, and more. 
+                                <p>CMS (Content Management System) Hosting give you the ability to update your website.  Get your content available on the web and we customise a template. We use WordPress and modern CMS tools, to provide a rich set of template and plug-in resources to support social media, ecommerce, galleries, publishing, and more. 
 				<p><a href="https://cms.softwareantelope.com/shop/hosting/cms-hosting-wordpress-install/" class="btn btn-default">Get CMS Hosting today!</a>
                               </div>
                             </div>
@@ -183,7 +189,7 @@ function formSubmit() {
                             </div>
                             <div id="cloud-section" class="collapse panel-collapse">
                               <div class="panel-body" style="color:#333">
-                                <p>Cloud based services scale more effectively.  We help you manage a huge web based resource (40 Gig storage in fast SSD Drives, 2TB transfer) mangaged with Fast NGinx SSL and regular web services, plus dedicated smaller hosts configured as secure Database servers, secure mail servers or dedicated game servers.  We only charge on a monthly basis, POA.
+                                <p>Our cloud servers are scaled to your requirements.  You can manage a small or huge web-based resource mangaged with Fast NGinx Webservers, SSL Security and plus custom configured secure database servers, mail servers or even dedicated game servers. Cloud servers provide high speed and high availability. 
 				<p><a href="https://cms.softwareantelope.com/shop/hosting/cloud-hosting-introductory-1-year-subscription/" class="btn btn-default">Get Cloud Hosting today!</a>
 				<p><a href="https://cms.softwareantelope.com/products/cloud-hosting/" class="btn btn-default">More informatioon</a>
                               </div>
