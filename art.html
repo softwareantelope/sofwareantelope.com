@@ -1,0 +1,131 @@
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at center, #999, #000);
+  overflow: hidden;
+}
+
+.eclipse {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: #000;
+  border: 0.25rem solid rgb(255, 240, 240);
+  box-shadow: 0px 0px 1rem 0.5rem rgba(255, 240, 215, 0.75);
+}
+
+.group {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  animation: float 60s linear infinite;
+  animation-delay: -1s;
+}
+.group.two {
+  left: -100%;
+}
+.cloud {
+  border-radius: 50%;
+  position: absolute;
+  top: -50vh;
+}
+.cloud.one {
+    width: 90%;
+    height: 10%;
+    filter: url(#filter-one);
+    box-shadow: 0 60vh 55px 20px rgba(220, 220, 200, 0.8);
+    left: 10%;
+  }
+
+  .cloud.two {
+    width: 40%;
+    height: 20%;
+    filter: url(#filter-two);
+    box-shadow: 0 80vh 60px 0px rgba(233, 233, 233, 0.8);
+    left: 50%;
+  }
+
+  .cloud.three {
+    width: 40%;
+    height: 10%;
+    filter: url(#filter-three);
+    box-shadow: 0 100vh 70px 20px rgba(255, 255, 255, 0.7);
+    left: 0%;
+  }
+
+  .cloud.four {
+    width: 70%;
+    height: 15%;
+    filter: url(#filter-four);
+    box-shadow: 0 130vh 80px 10px rgba(240, 240, 220, 0.8);
+    left: 50%;
+  }
+
+svg {
+  position: absolute;
+}
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  1.67%,
+  98.33%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+</style>
+</head>
+<body translate="no" >
+  <div class="eclipse"></div>
+<div class="group one">
+  <div class="cloud one"></div>
+  <div class="cloud two"></div>
+  <div class="cloud three"></div>
+  <div class="cloud four"></div>
+</div>
+<div class="group two">
+  <div class="cloud one"></div>
+  <div class="cloud two"></div>
+  <div class="cloud three"></div>
+  <div class="cloud four"></div>
+</div>
+<svg width="0" height="0">
+  <filter id="filter-one">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="2904"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="170"></feDisplacementMap>
+  </filter>
+  <filter id="filter-two">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="8822"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="180"></feDisplacementMap>
+  </filter>
+  <filter id="filter-three">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="7569"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="170"></feDisplacementMap>
+  </filter>
+  <filter id="filter-four">
+    <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="8517"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" scale="100"></feDisplacementMap>
+  </filter>
+</svg>
+</body>
+<script>
+	// https://codepen.io/Milleus/pen/bGNRMzV
+	//const pug = require('./pug');
+	//const html=pug.compileFile('eclipse.pug');
+</script>
+</html>
