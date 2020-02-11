@@ -1,0 +1,25 @@
+.eclipse
+.group.one
+  .cloud.one
+  .cloud.two
+  .cloud.three
+  .cloud.four
+.group.two
+  .cloud.one
+  .cloud.two
+  .cloud.three
+  .cloud.four
+svg(width="0", height="0")
+  filter#filter-one
+    feTurbulence(type="fractalNoise", baseFrequency="0.012", numOctaves="4", seed="2904")
+    feDisplacementMap(in="SourceGraphic", scale="170")
+  filter#filter-two
+    feTurbulence(type="fractalNoise", baseFrequency="0.012", numOctaves="4", seed="8822")
+    feDisplacementMap(in="SourceGraphic", scale="180")
+  filter#filter-three
+    feTurbulence(type="fractalNoise", baseFrequency="0.012", numOctaves="4", seed="7569")
+    feDisplacementMap(in="SourceGraphic", scale="170")
+  filter#filter-four
+    feTurbulence(type="fractalNoise", baseFrequency="0.009", numOctaves="4", seed="8517")
+    feDisplacementMap(in="SourceGraphic", scale="100")
+
